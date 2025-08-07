@@ -1,0 +1,7 @@
+dotnet ef migrations add UserName_Not_Null -s IdentityServer -p IdentityServer_DAL --context AppDbContext
+dotnet ef database update -s IdentityServer -p IdentityServer_DAL --context AppDbContext
+
+dotnet ef database update Migration_1 -s IdentityServer -p IdentityServer_DAL --context AppDbContext
+dotnet ef migrations remove -s IdentityServer -p IdentityServer_DAL --context AppDbContext
+
+dotnet ef migrations script Migration_1  UserName_Not_Null -o UserName_Not_Null.sql -s IdentityServer -p IdentityServer_DAL --context AppDbContext 
